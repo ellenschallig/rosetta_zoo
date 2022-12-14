@@ -20,7 +20,7 @@ class ReadClassifications:
     all_classifications.rename(columns={'subject_ids': "subject_id"}, inplace=True)
 
     # Filter to specified workflow version
-    for_workflow_version = all_classifications[all_classifications['workflow_version'] == self.workflow_version]
+    for_workflow_version = all_classifications[all_classifications['workflow_version'] == self.workflow_version].copy()
     for_workflow_version.drop(['workflow_version'], axis=1, inplace=True)
 
     return for_workflow_version
