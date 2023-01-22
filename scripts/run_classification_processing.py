@@ -13,12 +13,19 @@ classifications = ReadClassifications().run()
 # classifications = classifications[classifications['subject_id'] == 75637391]
 
 ellipses = ExtractEllipses().extract(classifications)
-tagged = TagLargeEllipses().tag(ellipses)
-ratioed = AddRatios().add_ratios(tagged)
-filtered = FilterBySizeOfEllipse().filter(ratioed)
-filtered.to_csv('filtered.csv', index=False)
 
-print(ellipses)
+ellipses.to_csv('ellipses-6.csv', index=False)
+
+print("1")
+tagged = TagLargeEllipses().tag(ellipses)
+print("2")
+ratioed = AddRatios().add_ratios(tagged)
+print("3")
+filtered = FilterBySizeOfEllipse().filter(ratioed)
+print("4")
+filtered.to_csv('filtered-6.csv', index=False)
+
+# print(ellipses)
 
 def calculate_and_write_csv(subject_id, group):
   print(subject_id)
@@ -31,4 +38,4 @@ def calculate_and_write_csv(subject_id, group):
     writer.writeheader()
     writer.writerows(pixels)
 
-[calculate_and_write_csv(subject_id, group) for subject_id, group in filtered.groupby('subject_id')]
+# [calculate_and_write_csv(subject_id, group) for subject_id, group in filtered.groupby('subject_id')]
