@@ -61,7 +61,7 @@ frame: each image in the pair. frame = 0 is the before or first image, frame = 1
 
 #### read_classifications.py
 The raw classifications are downloaded from the project page on Zooniverse, which provides it in csv format. Unnecessary columns are removed. The workflow number with which the project was launched (in this case "79.165") is used to filter the project data from earlier tries. This is returned as a pandas dataframe.
-The current classification file is "rosetta-zoo-classifications-6.csv", which includes all the classifications up to 22 Nov 2022.
+The latest classification file is "rosetta-zoo-classifications-6.csv", which includes all the classifications up to Dec 2022.
 
 #### extract_ellipses.py
 The classifications dataframe is processed to extract all ellipses drawn onto each pair of images. Each set of ellipses drawn by a single user for a single pair of images is called a 'classification'. An 'annotation' is an answer to one of the tasks in the workflow, and for task T0 this can include zero, one, or multiple ellipses. Task T1 ('Did you look for changes all over the images') is removed from the dataset at this point. Each ellipse ends up on a separate row, with each parameter/attribute split into separate columns. This is then returned as another pandas dataframe.
