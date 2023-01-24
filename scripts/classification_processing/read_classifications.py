@@ -3,7 +3,7 @@ import pandas as pd
 
 SCRIPT_DIR = os.path.dirname(__file__)
 DEFAULT_STORAGE_PATH = os.path.join(SCRIPT_DIR, "../../classification_data")
-DEFAULT_CLASSIFICATION_FILENAME = os.path.join(DEFAULT_STORAGE_PATH, "rosetta-zoo-classifications-5.csv")
+DEFAULT_CLASSIFICATION_FILENAME = os.path.join(DEFAULT_STORAGE_PATH, "rosetta-zoo-classifications-6.csv")
 
 class ReadClassifications:
   def __init__(self, path = DEFAULT_CLASSIFICATION_FILENAME, workflow_version = "79.165"):
